@@ -241,3 +241,51 @@ No, tira con el sprint 2.
 - **Honestidad**: el sprint 3 será de **consolidación y poda final**, no de avance. Si sprint 3 no entrega `c(ε)` o compilación Lean limpia, no hay sprint 4.
 
 Todo subido en un único commit. Cinco callejones cerrados con argumento, una brecha cuantitativa real, dos archivos Lean en preparación. Pendiente: tu revisión.
+
+---
+
+## Usuario
+
+Haz el sprint 3... vamos hasta el final
+
+---
+
+## Claude
+
+*(Acción — sprint 3 final)*
+
+1. **Jefe escribe `JEFE/sprint_03_briefing.md`** como sprint de consolidación y poda final. Reglas nuevas: **R-N4 criterio binario** (el `.lean` compila o no compila; nada de "lo dejé bonito"), **R-N5 epitafio técnico** permitido. Disolución formal de agente_03 (rama medible cerrada) y agente_08 (callejón confirmado). Métrica binaria: `c(ε)` numérico de agente_01 + `.lean` que compile de agente_04+07.
+2. **Ola 1 (7 agentes en paralelo)**: agente_01 (c(ε) o epitafio), agente_03 (nota cierre opcional), agente_04 (Lean Q), agente_05 (README dataset + extensión a 2^32), agente_06 (enterramiento técnico), agente_08 (nota cierre opcional), agente_10 (consolidación numérica).
+3. **Ola 2 (3 agentes dependientes)**: agente_02 y agente_09 (consumen c(ε) de 01), agente_07 (certificador final + Lean + auditoría dura).
+4. **Jefe escribe `JEFE/sprint_03_sintesis.md`** con el veredicto sobre R-N4 y la disolución del equipo.
+5. **Jefe escribe `RESULTADOS.md`** público en la raíz del repo, para lector externo que llega frío.
+
+**Resultados duros del sprint 3:**
+
+- **agente_01** entregó número: `c(ε) = ε³/80` anclado a Prop. 1.17 de Tao 2019 vía Erdős–Turán + Borel–Cantelli log. PERO con dos asunciones `[verificar]` que el propio agente_01 reconoce que podrían tumbar el número en auditoría estricta.
+- **agente_07** (abogado del diablo) auditó con dureza: el c(ε) es **"concedido como cota de trabajo derivable, NO certificado como derivado de Tao 2019"**. A1 (exponente cúbico) inconcluyente, A2 (factor ε²/16) concedido sin derivación. Veredicto sobre `.lean` de agente_04: **defendido** (1 sorry estructural, 7 lemas sin sorry: 2 sustantivos como `T_even`, 5 triviales-pero-correctos).
+- **agente_04** entregó `Collatz_Q.lean` con T, Q (con sorry estructural en Q_conjugates_T_to_shift), 7 lemas demostrados sin sorry. **NO compilado** por ausencia de toolchain Lean en el entorno.
+- **agente_07** entregó `FriedmanReduction.lean` con `theorem collatz_of_log_bound := sorry` + 5 lemas sin sorry. **NO compilado** por la misma razón.
+- **agente_05** entregó `README.md` del dataset + intentó extensión a 2^32 (log en `run_2_32.log`).
+- **agente_06** entregó enterramiento técnico de la rama "ciclos vía complejidad combinatoria" con citas literales de la brecha 1.930 vs 1.3066. Sobre `K_0`: también enterrado por ausencia de medida de irracionalidad con constantes auditables.
+- **agente_02** consolidó S2 como postulado-con-interfaz, conectó con `c(ε)=ε³/80`: `δ_S2 = ε³/160`, `β_2 ≤ C·(log N)^{-ε³/160}`. Etiqueta condicional al veredicto de 07.
+- **agente_09** escenario B: `c ≤ 1/640` queda tres órdenes por debajo del `c > 1` que necesita su bombeo. Postulado-con-interfaz + epitafio.
+- **agente_10** consolidó tabla numérica final.
+- **agente_03, agente_08** entregaron notas de cierre como disueltos.
+
+**Veredicto del jefe sobre R-N4:**
+
+- No se cumple en la letra dura: `c(ε)` no certificado como derivado paso-a-paso, `.lean` no ejecutados.
+- Cumplimiento pragmático ~80%: 12 lemas sin sorry, sintaxis revisada manualmente, dos sorrys estructurales declarados.
+- Etiqueta final discrepante: agente_01 se autoevaluaba condicional; el jefe **formaliza Callejón documentado** dado el veredicto duro de 07.
+
+**Disolución del equipo:**
+
+- **Resultado parcial publicable**: agente_02, agente_04, agente_05, agente_06 (mixto), agente_07, agente_09, agente_10.
+- **Callejón documentado**: agente_01, agente_03, agente_06 (rama K_0), agente_08.
+
+**Conclusión**: no "núcleo de resultados consolidados" en sentido fuerte, sino **intento honesto que cierra con epitafio técnico utilizable**. Cinco entregables que sostienen notas técnicas autónomas, cinco callejones cerrados con argumento cuantificado, cuello de botella analítico localizado exactamente en Prop. 1.17 de Tao 2019.
+
+**`RESULTADOS.md` publicado** en la raíz del repo, con aviso inequívoco en las primeras líneas de que el experimento es una simulación multi-agente con LLMs y que NO se ha demostrado nada nuevo sobre Collatz. Cierra con: *"La parte aprovechable se cita por ruta exacta arriba; la paja se cita también, para que nadie la confunda con producto."*
+
+Experimento cerrado. Tres sprints, ~1.8M tokens consumidos, ~80 min de wall time agregado.
