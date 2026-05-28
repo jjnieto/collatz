@@ -1,0 +1,9 @@
+N,k,p_star,method,meta,seconds
+10^6,10,846,exacto,upper=1024,0.1
+10^6,20,868422,exacto,upper=1000000,3
+10^6,30,900133,exacto,upper=1000000,4.4
+10^6,40,961208,exacto,upper=1000000,5.9
+10^8,10,846,exacto,upper=1024,0
+10^8,20,910594,exacto,upper=1048576,3.2
+10^8,30,89978421,exacto,upper=100000000,451
+10^8,40,95982836,exacto,upper=100000000,598

@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "agente": "agente_05",
+  "sprint": 2,
+  "operator": "Syracuse: T(n)=n/2 if even else (3n+1)/2",
+  "sigma_definition": "count of T-steps until first reaching 1; sigma(1)=0",
+  "range": {
+    "n_min": 2,
+    "n_max": 1073741824,
+    "n_max_exp": 30,
+    "count": 1073741823
+  },
+  "stats": {
+    "mean_ratio": 4.769060380060269,
+    "sd_ratio": 1.5144278114170504,
+    "max_sigma": {
+      "value": 616,
+      "n": 670617279
+    },
+    "C_emp": {
+      "value": 22.834725219120767,
+      "n": 63728127,
+      "definition": "sup over measured range of sigma(n)/log2(n)"
+    }
+  },
+  "elapsed_seconds": 200.435,
+  "files": {
+    "sample": "sigma_data.csv",
+    "outliers": "sigma_outliers.csv",
+    "histogram": "sigma_histogram.csv"
+  }
+}
