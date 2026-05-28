@@ -146,3 +146,58 @@ Ok, pues crea un repositorio público llamado collatz y sube todo este planteami
 ## Claude
 
 *(Acción)* Crea el repositorio `jjnieto/collatz` en GitHub, sube el planteamiento como `README.md` y este histórico literal como `CONVERSATION.md`. Confirma previamente visibilidad (público), ruta local (`C:\Users\jjnie\collatz`) y formato (Markdown con etiquetas Usuario/Claude). Las respuestas futuras se irán añadiendo a este archivo en commits sucesivos.
+
+Tras la confirmación: crea el repo público `github.com/jjnieto/collatz`, sube los dos archivos en un commit inicial y reporta la URL.
+
+---
+
+## Usuario
+
+Muy bien, pues ahora quiero que trabajes con 10 agentes en paralelo como si cada uno de ellos fuera un matemático experto que vayan publicando sus avances en el repo (cada uno en su carpeta agente_n) y que haya un agente jefe quie los coordine. Trabajaremos por sprints de unos 10 minutos (o los que tú elijas como preferibles, pero con resultados visibles cada poco) ¿alguna pregunta?
+
+---
+
+## Claude
+
+Sí, varias preguntas — pero antes una advertencia honesta para que esto no te decepcione:
+
+**Qué será y qué no será:**
+- Los "matemáticos" son **agentes LLM haciendo roleplay**, no expertos reales. Pueden producir exploración matemática plausible, recapitular técnicas conocidas, plantear sub-problemas razonables y escribir Python para verificar conjeturas chicas. **No van a resolver Collatz**, y si alguno afirma haberlo hecho, será casi con certeza un argumento circular o un error sutil.
+- Los "sprints de 10 minutos" no son literales: cada agente termina cuando termina su tarea acotada (típicamente 2-6 minutos de tiempo real). Lo que sí puedo garantizar es **commits visibles al final de cada sprint**.
+- Esto consume bastantes tokens. 10 agentes × N sprints se acumula rápido.
+
+Como ejercicio de coordinación multi-agente, exploración estructurada de la literatura, o "simulación de un Polymath" — sí, es interesante. Como vía real para demostrar la conjetura — no.
+
+*(Cuatro preguntas formuladas vía UI sobre: asignación, número de sprints, rol del jefe, estrategia git.)*
+
+---
+
+## Usuario *(respuestas a las preguntas)*
+
+- **Asignación:** Por célula del README (2 por célula).
+- **Volumen:** 1 sprint y paramos a revisar.
+- **Rol del jefe:** Briefing inicial + síntesis final + tareas para el siguiente sprint.
+- **Git strategy:** Cada agente escribe sólo en su `agente_NN/`, commit único al final.
+
+---
+
+## Claude
+
+*(Acción — sprint 1)*
+
+1. Crea carpetas `agente_01/` … `agente_10/` + `JEFE/`.
+2. Lanza el **agente JEFE** que escribe `JEFE/sprint_01_briefing.md` con asignaciones específicas para los 10 agentes (refinar Tao 2019, sumas exponenciales, rigidez ergódica, dinámica simbólica 2-ádica, verificación numérica, cotas inferiores sobre ciclos, fuerza de prueba PA/ZFC, modelos no estándar, autómatas finitos, complejidad combinatoria) y las reglas no negociables (prohibido fingir demostraciones, `[verificar]` en citas dudosas, 400-1200 palabras, español).
+3. Lanza **10 agentes en paralelo** que escriben `agente_NN/sprint_01.md` cada uno con su estado del arte, sub-problema propuesto, y autoevaluación.
+4. Lanza al **JEFE de nuevo** para escribir `JEFE/sprint_01_sintesis.md` (tabla resumen, solapamientos, contradicciones detectadas, veredicto por célula, decisiones para sprint 2, honestidad final).
+
+**Resultado del sprint 1:**
+- Los 10 agentes entregaron en español (~900-1100 palabras cada uno), con citas marcadas `[verificar]` cuando había duda, sin afirmar demostraciones.
+- **Autoevaluación**: 10/10 marcaron su línea como "Improbable" — una señal honesta de que en un sprint nadie cree haber tocado oro, pero potencialmente también señal de riesgo (ejercicios técnicos sin tracción).
+- **Hallazgos del jefe**:
+  - Tres agentes (03, 04, 06) atacan el mismo objeto "ciclos no triviales" desde lentes distintas — colapsan a la misma desigualdad `2^N ≈ 3^K`. Propuesta: fusionarlos en una sub-célula en sprint 2.
+  - Cadena de dependencia natural: agente_01 (Tao efectivo) → {agente_02 norma Gowers, agente_09 no-regularidad de L_div}.
+  - Tubería computacional agente_05 → agente_07 → agente_08 infrautilizada.
+  - Agente_03 navega cerca de circularidad; agente_04 duplica trabajo de agente_06.
+- **Dirección propuesta para sprint 2**: menos paralelismo, 2-3 tuberías inter-célula concretas; C2 reorientada a infraestructura/formalización; C4 concentrada en cota logarítmica; agente_07 designado **abogado del diablo**.
+
+Todo subido en un único commit. Pendiente: tu revisión.
